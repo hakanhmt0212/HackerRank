@@ -1,3 +1,16 @@
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'aVeryBigSum' function below.
+#
+# The function is expected to return a LONG_INTEGER.
+# The function accepts LONG_INTEGER_ARRAY ar as parameter.
+#
+
 def aVeryBigSum(ar):
     toplam = 0
     for i in range(len(ar)):
@@ -5,7 +18,14 @@ def aVeryBigSum(ar):
     return toplam
 
 if __name__ == '__main__':
-    ar_count = int(input())
-    ar = list(map(int, input().split()))
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input().strip())
+
+    ar = list(map(int, input().rstrip().split()))
+
     result = aVeryBigSum(ar)
-    print(result)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

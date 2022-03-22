@@ -1,3 +1,16 @@
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'timeConversion' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+
 def timeConversion(s):
     arr = s.split(":")
     if ("PM" in arr[2]) and (int(arr[0]) != 12):
@@ -10,9 +23,12 @@ def timeConversion(s):
     return newTime
 
 if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     s = input()
 
     result = timeConversion(s)
 
-    print(result)
+    fptr.write(result + '\n')
+
+    fptr.close()
